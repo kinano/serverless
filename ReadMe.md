@@ -16,6 +16,9 @@ aws lambda get-policy --function-name $FUNC_NAME
 
 * The following link shows how to install requirements.txt using serverless framework
 https://serverless.com/blog/serverless-python-packaging/
+```
+python3 -m venv ./venv && pip3 install Pillow && pip3 freeze > requirements.txt
+```
 
 * Here is a sample S3 event
 ```
