@@ -3,7 +3,7 @@ import helpers.images as image_helpers
 import helpers.s3 as s3_helpers
 import logging
 logging.basicConfig()
-logger = logging.getLogger('logger')
+logger = logging.getLogger("logger")
 
 def handler(event, context):
 
@@ -19,11 +19,12 @@ def handler(event, context):
     for rec in records:
         s3_dict = rec.get("s3")
         bucket = {
-            'service': 's3',
-            'url': 'https://s3.amazonaws.com',
-            'name': s3_dict.get("bucket").get("name"),
-            'region': rec.get("awsRegion")
+            "service": "s3",
+            "url": "https://s3.amazonaws.com",
+            "name": s3_dict.get("bucket").get("name"),
+            "region": rec.get("awsRegion")
         }
+
         object_key = s3_dict.get("object").get("key")
         image_helpers.handle_image(
             bucket=bucket,
