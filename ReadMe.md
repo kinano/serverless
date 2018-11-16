@@ -21,44 +21,7 @@ https://serverless.com/blog/serverless-python-packaging/
 python3 -m venv ./venv && pip3 install Pillow && pip3 freeze > requirements.txt
 ```
 
-* Here is a sample S3 event
+* You can invoke a Lambda function locally using serverless
 ```
-{
-    "Records": [
-        {
-            "eventVersion": "2.0",
-            "eventSource": "aws:s3",
-            "awsRegion": "",
-            "eventTime": "2018-11-16T01: 38: 02.813Z",
-            "eventName": "ObjectCreated:Put",
-            "userIdentity": {
-                "principalId": ""
-            },
-            "requestParameters": {
-                "sourceIPAddress": ""
-            },
-            "responseElements": {
-                "x-amz-request-id": "",
-                "x-amz-id-2": ""
-            },
-            "s3": {
-                "s3SchemaVersion": "1.0",
-                "configurationId": "AfterUploadConvertFile",
-                "bucket": {
-                    "name": "",
-                    "ownerIdentity": {
-                        "principalId": ""
-                    },
-                    "arn": "arn:aws:s3: : :"
-                },
-                "object": {
-                    "key": "dsc00041.jpg",
-                    "size": 143812,
-                    "eTag": "2385b240b1037eb7f8e04d335c4baf05",
-                    "sequencer": "005BEE1F7A94C5B8A0"
-                }
-            }
-        }
-    ]
-}
+serverless invoke local --function $FUNC_NAME --path ./sample_data.json
 ```
