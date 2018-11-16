@@ -1,0 +1,38 @@
+{
+    "Records": [
+        {
+            "eventVersion": "2.0",
+            "eventSource": "aws:s3",
+            "awsRegion": "us-east-1",
+            "eventTime": "2018-11-16T01: 38: 02.813Z",
+            "eventName": "ObjectCreated:Put",
+            "userIdentity": {
+                "principalId": "AWS:BLAH"
+            },
+            "requestParameters": {
+                "sourceIPAddress": ""
+            },
+            "responseElements": {
+                "x-amz-request-id": "",
+                "x-amz-id-2": ""
+            },
+            "s3": {
+                "s3SchemaVersion": "1.0",
+                "configurationId": "AfterUploadTransposeImages",
+                "bucket": {
+                    "name": "kinan-file-converter-source",
+                    "ownerIdentity": {
+                        "principalId": ""
+                    },
+                    "arn": "arn:aws:s3: : :kinan-file-converter-source"
+                },
+                "object": {
+                    "key": "dsc00041.jpg",
+                    "size": 143812,
+                    "eTag": "2385b240b1037eb7f8e04d335c4baf05",
+                    "sequencer": "005BEE1F7A94C5B8A0"
+                }
+            }
+        }
+    ]
+}
