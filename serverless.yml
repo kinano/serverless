@@ -3,29 +3,35 @@ service: file-converter
 provider:
   name: aws
   runtime: python3.6
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "s3:ListBucket"
+      Resource: {
+        "Fn::Join" : [
+          "", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ]
+        ]
+      }
+    - Effect: "Allow"
+      Action:
+        - "s3:PutObject"
+      Resource:
+        Fn::Join:
+          - ""
+          - - "arn:aws:s3:::"
+            - "Ref" : "ServerlessDeploymentBucket"
+            - "/*"
+    - Effect: "Allow"
+      Action:
+        - "s3:PutObject"
+        - "s3:ListBucket"
+        - "s3:GetObject"
+      Resource: "arn:aws:s3:::kinan-file-converter-source/*"
 
-# you can overwrite defaults here
-#  stage: dev
-#  region: us-east-1
-
-iamRoleStatements:
-  - Effect: "Allow"
-    Action:
-      - "s3:ListBucket"
-    Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
-  - Effect: "Allow"
-    Action:
-      - "s3:PutObject"
-    Resource:
-      Fn::Join:
-        - ""
-        - - "arn:aws:s3:::"
-          - "Ref" : "ServerlessDeploymentBucket"
-          - "/*"
-
-#  environment:
-#    variable1: value1
-
+  # environment:
+  #   var_1: blah
+  stage: dev
+  region: us-east-1
 
 include:
   - helpers/images.py
