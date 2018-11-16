@@ -44,17 +44,17 @@ https://serverless.com/blog/serverless-python-packaging/
                     "name": "",
                     "ownerIdentity": {
                         "principalId": ""
+                    },
+                    "arn": "arn:aws:s3: : :"
                 },
-                "arn": "arn:aws:s3: : :"
-            },
-            "object": {
-                "key": "dsc00041.jpg",
-                "size": 143812,
-                "eTag": "2385b240b1037eb7f8e04d335c4baf05",
-                "sequencer": "005BEE1F7A94C5B8A0"
+                "object": {
+                    "key": "dsc00041.jpg",
+                    "size": 143812,
+                    "eTag": "2385b240b1037eb7f8e04d335c4baf05",
+                    "sequencer": "005BEE1F7A94C5B8A0"
+                }
             }
         }
-    }
-]
+    ]
 }
 ```
