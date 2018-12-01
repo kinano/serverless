@@ -1,4 +1,6 @@
-Setup a Lambda function that optimizes images uploaded to an S3 bucket. The Lambda function gets executed automatically when a new file is uploaded to the source bucket.
+Setup a Lambda function that optimizes images uploaded to an S3 bucket. The Lambda function will also generate thumbnails for every image uploaded to the S3 bucket. 
+
+The Lambda function gets executed automatically when a new file is uploaded to the source bucket.
 
 ```
 -- Setup some environment variables
